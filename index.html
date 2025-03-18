@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Video Clips Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Video Clips Generator</h1>
+
+        <label for="videoInput">Masukkan URL YouTube:</label>
+        <input type="text" id="videoInput" placeholder="Masukkan link YouTube">
+
+        <label for="clipDuration">Durasi Klip (detik):</label>
+        <input type="number" id="clipDuration" min="5" max="60" value="10">
+
+        <button id="generateBtn">Generate Clips</button>
+
+        <div id="loadingBar" class="hidden">
+            <p>Proses: <span id="progressPercent">0%</span></p>
+            <div class="progress">
+                <div id="progressFill"></div>
+            </div>
+        </div>
+
+        <div id="thumbnailPreview" class="hidden">
+            <h3>Thumbnail Video</h3>
+            <img id="videoThumbnail" src="" alt="Thumbnail">
+        </div>
+
+        <div id="clipsContainer" class="hidden">
+            <h2>Hasil Klip</h2>
+            <div id="clipsList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
