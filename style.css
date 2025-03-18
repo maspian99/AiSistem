@@ -1,53 +1,86 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     text-align: center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 500px;
     margin: 50px auto;
     padding: 20px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
 }
 
-input, button {
+.input-box {
+    margin: 15px 0;
+    text-align: left;
+}
+
+input {
     width: 90%;
     padding: 10px;
-    margin: 10px 0;
+    border-radius: 8px;
     font-size: 16px;
 }
 
-button {
-    background-color: #28a745;
+.generate-btn {
+    width: 100%;
+    background: #ff9800;
     color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .hidden {
     display: none;
 }
 
-.progress {
+.progress-bar {
     width: 100%;
-    background: #ddd;
     height: 10px;
-    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#progress-fill {
+    height: 100%;
+    width: 0;
+    background: #ff9800;
+    transition: width 0.3s;
+}
+
+.thumbnail {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.clip {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 12px;
     margin-top: 10px;
 }
 
-#progressFill {
-    width: 0%;
-    height: 100%;
+.clip h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.download-btn {
+    margin-top: 10px;
+    padding: 10px;
     background: #28a745;
-    border-radius: 5px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }

@@ -3,34 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video Clips</title>
+    <title>Pinz AI - Video Clipper</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="container">
-        <h1>AI Video Clips</h1>
+        <h1>🎬 Pinz AI - Smart Video Clipper</h1>
 
-        <label for="videoInput">Masukkan URL YouTube:</label>
-        <input type="text" id="videoInput" placeholder="Masukkan link YouTube">
+        <div class="input-box">
+            <label for="youtube-url">🔗 Masukkan URL YouTube:</label>
+            <input type="text" id="youtube-url" placeholder="https://www.youtube.com/watch?v=...">
+        </div>
 
-        <button id="generateBtn">Cari Momen Terbaik</button>
+        <div class="input-box">
+            <label for="clip-duration">⏳ Durasi Clip (detik):</label>
+            <input type="number" id="clip-duration" placeholder="Contoh: 30" min="5" max="180">
+        </div>
 
-        <div id="loadingBar" class="hidden">
-            <p>Proses: <span id="progressPercent">0%</span></p>
-            <div class="progress">
-                <div id="progressFill"></div>
+        <button class="generate-btn" onclick="processVideo()">🚀 Generate Clips</button>
+
+        <div id="loading" class="hidden">
+            <p>⏳ Memproses... <span id="progress-text">0%</span></p>
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
             </div>
         </div>
 
-        <div id="thumbnailPreview" class="hidden">
-            <h3>Thumbnail Video</h3>
-            <img id="videoThumbnail" src="" alt="Thumbnail">
-        </div>
-
-        <div id="clipsContainer" class="hidden">
-            <h2>Momen Terbaik</h2>
-            <div id="clipsList"></div>
-        </div>
+        <div id="thumbnail-container"></div>
+        <div id="clips-container"></div>
     </div>
 
     <script src="script.js"></script>
