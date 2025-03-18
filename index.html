@@ -3,35 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinz AI - Video Clipper</title>
+    <title>Pinz AI - AI YouTube Clip Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
-        <h1>🎬 Pinz AI - Smart Video Clipper</h1>
-
-        <div class="input-box">
-            <label for="youtube-url">🔗 Masukkan URL YouTube:</label>
-            <input type="text" id="youtube-url" placeholder="https://www.youtube.com/watch?v=...">
+        <h1>Pinz AI</h1>
+        <p>Masukkan URL YouTube untuk menghasilkan klip otomatis</p>
+        <input type="text" id="youtubeUrl" placeholder="Tempelkan URL YouTube di sini">
+        
+        <div class="options">
+            <label>Pilih durasi klip:</label>
+            <select id="clipDuration">
+                <option value="30"> &lt;30 detik </option>
+                <option value="60"> 30-60 detik </option>
+                <option value="180"> 60-180 detik </option>
+            </select>
         </div>
 
-        <div class="input-box">
-            <label for="clip-duration">⏳ Durasi Clip (detik):</label>
-            <input type="number" id="clip-duration" placeholder="Contoh: 30" min="5" max="180">
+        <button onclick="generateClips()">Generate</button>
+
+        <div id="progress" class="hidden">
+            <p>Memproses klip... <span id="progressValue">0%</span></p>
+            <div class="progress-bar"><div class="progress"></div></div>
         </div>
 
-        <button class="generate-btn" onclick="processVideo()">🚀 Generate Clips</button>
-
-        <div id="loading" class="hidden">
-            <p>⏳ Memproses... <span id="progress-text">0%</span></p>
-            <div class="progress-bar">
-                <div id="progress-fill"></div>
-            </div>
-        </div>
-
-        <div id="thumbnail-container"></div>
-        <div id="clips-container"></div>
+        <div id="results" class="hidden"></div>
     </div>
 
     <script src="script.js"></script>
